@@ -2,7 +2,7 @@
 
 A **FastAPI-powered** web app that compares text differences between two columns from an uploaded file. It **highlights** removed text in **🟥 red (strike-through)** and added text in **🟩 green** to make changes easily visible! 📊  
 
-# 🔥 Features:
+## 🔥 Features:
 ✅ Upload `.csv`, `.xlsx`, or `.xls` files.  
 ✅ Preview the uploaded file before processing.  
 ✅ Select any two columns to compare.  
@@ -39,7 +39,7 @@ A **FastAPI-powered** web app that compares text differences between two columns
 ```bash
 Ensure you have Python 3.8+ installed on your system.
 ```
-### ** 💻 Steps to Run Locally: **
+### **💻 Steps to Run Locally:**
 
 ### 📥 Clone the Repository
    ```bash
