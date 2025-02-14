@@ -1,33 +1,43 @@
 # Content-Differentiator
 
-## Overview
-This project is a web-based application that allows users to upload spreadsheet files (CSV, XLSX, XLS) and compare the differences between two selected text columns. The application highlights differences in sentences using color-coded text and allows users to download the processed results.
+A **FastAPI-powered** web app that compares text differences between two columns from an uploaded file. It **highlights** removed text in **🟥 red (strike-through)** and added text in **🟩 green** to make changes easily visible! 📊  
 
+🔥 **Features:**  
+✅ Upload `.csv`, `.xlsx`, or `.xls` files.  
+✅ Preview the uploaded file before processing.  
+✅ Select any two columns to compare.  
+✅ Get a downloadable **Excel file** 📂 with color-coded differences.  
+✅ **Beautiful UI** 🎨 with Bootstrap & smooth animations.  
+✅ 🚀 **FastAPI** backend with **async processing** for speed.  
+✅ **Loading animations** & **progress bar** for better UX.  
+
+---
+
+## 🌟 Live Demo (GIF)  
 
 ![Demo](https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif)  
 *(Replace with your actual demo GIF/video)*  
 
-## Features
-- Upload and preview CSV, XLSX, and XLS files.
-- Select two columns for text comparison.
-- Detect differences in text using color-coded highlights.
-- Download the processed file as an Excel document.
-- User-friendly web interface built with Bootstrap.
-- API backend using FastAPI.
-- Supports CORS for cross-origin requests.
+---
 
-## Technologies Used
-- **Backend:** FastAPI
-- **Frontend:** HTML, Bootstrap, JavaScript
-- **Libraries:** Pandas, difflib, xlsxwriter
-- **Server:** Uvicorn
+## 🛠 Technologies Used  
 
-## Installation
-### Prerequisites
+| **Tech**   | **Description**  |
+|------------|----------------|
+| ⚡ FastAPI  | Backend API   |
+| 🐍 Python  | Core language  |
+| 📊 Pandas  | Data processing  |
+| 🎨 Bootstrap  | Frontend styling  |
+| 🖍 xlsxwriter  | Excel formatting  |
+| 🔄 difflib  | Text comparison  |
+
+## 🚀 Installation & Setup  
+
+### **🔧 Prerequisites:** 
 Ensure you have Python 3.8+ installed on your system.
 
 ### Steps to Run Locally
-1. Clone the repository:
+### **📥 Clone the Repository:**
    ```bash
    git clone https://github.com/your-username/your-repository.git
    cd your-repository
@@ -36,13 +46,11 @@ Ensure you have Python 3.8+ installed on your system.
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
-3. Install dependencies:
-   ```bash
+   
+📦 Install Dependencies:
    pip install -r requirements.txt
-   ```
-4. Start the FastAPI server:
-   ```bash
+   
+▶ Run the Application:
    uvicorn main:app --reload
    ```
 5. Open `index.html` in a browser or use a local server to view the front end.
