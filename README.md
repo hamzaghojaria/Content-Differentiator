@@ -48,32 +48,28 @@ Ensure you have Python 3.8+ installed on your system.
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    
 📦 Install Dependencies:
+   ```bash
    pip install -r requirements.txt
    
 ▶ Run the Application:
+   ```bash
    uvicorn main:app --reload
    ```
-5. Open `index.html` in a browser or use a local server to view the front end.
+🌐 Open Frontend:
+Simply open index.html in your browser! 🌍
 
-## API Endpoints
-### 1. Upload File and Preview
-**Endpoint:** `POST /preview/`
-- **Description:** Uploads a file and returns a preview of the data.
-- **Payload:** Multipart file upload
-- **Response:** JSON with filename and preview data.
+🔗 API Endpoints
+🟢 Upload File & Preview (POST /preview/)
+📂 Request: Upload a .csv / .xlsx / .xls file.
+📊 Response: Returns a preview of the first few rows.
 
-### 2. Compare Columns and Generate Difference Report
-**Endpoint:** `POST /content-difference/`
-- **Description:** Compares two selected columns and returns a downloadable Excel file with color-coded differences.
-- **Payload:**
-  ```json
-  {
-    "file": "uploaded_file.xlsx",
-    "column1": "Column A",
-    "column2": "Column B"
-  }
-  ```
-- **Response:** File download link (`final_output.xlsx`)
+🟢 Compare Columns & Download (POST /content-difference/)
+📂 Request:
+
+   * file → Uploaded file
+column1 → First column to compare
+column2 → Second column to compare
+📊 Response: Returns a downloadable Excel file (final_output.xlsx) with highlighted differences! 🎉
 
 ## Usage
 1. Upload a CSV or Excel file.
