@@ -1,4 +1,0 @@
-fastapi==0.115.8
-pandas==2.2.3
-uvicorn==0.34.0
-XlsxWriter==3.2.2
