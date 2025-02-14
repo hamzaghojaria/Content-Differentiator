@@ -39,8 +39,9 @@ A **FastAPI-powered** web app that compares text differences between two columns
 ```bash
 Ensure you have Python 3.8+ installed on your system.
 ```
-### 💻 Steps to Run Locally
-### **📥 Clone the Repository:**
+### ** 💻 Steps to Run Locally: **
+
+### 📥 Clone the Repository
    ```bash
    git clone https://github.com/your-username/your-repository.git
    cd your-repository
@@ -72,5 +73,3 @@ For any issues or suggestions, please create an issue on the GitHub repository o
 
 ---
 Made with ❤️ using FastAPI and Bootstrap.
-
-
