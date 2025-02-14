@@ -60,35 +60,15 @@ Ensure you have Python 3.8+ installed on your system.
 Simply open index.html in your browser! 🌍
 ```
 
-## 🔗 API Endpoints
-
-### 🟢 Upload File & Preview (POST /preview/)
-* 📂 Request: Upload a .csv / .xlsx / .xls file.
-* 📊 Response: Returns a preview of the first few rows.
-
-### 🟢 Compare Columns & Download (POST /content-difference/)
-📂 Request:
-* file → Uploaded file
-* column1 → First column to compare
-* column2 → Second column to compare
-📊 Response: Returns a downloadable Excel file (final_output.xlsx) with highlighted differences! 🎉
-
 ## 🛠 How It Works
 * 🔹 Upload your file 📂
 * 🔹 Select two columns for comparison 📊
 * 🔹 Click "Compare & Download" 🚀
 * 🔹 Download Excel file with differences marked! ✅
+  
 ### 📌 Text Highlighting:
-
 * ❌ Deleted text → 🟥 Red (Strike-through)
 * ✅ Added text → 🟩 Green
-
-## 🎨 UI Highlights
-✨ Bootstrap-powered UI for smooth interactions!
-⏳ Loading animations & progress bar for better feedback!
-📥 Easy file upload & instant preview!
-
-🔽 Screenshots:
 
 ## Contributing
 Feel free to fork the project, create feature branches, and submit pull requests. Contributions are welcome!
