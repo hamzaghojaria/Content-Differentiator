@@ -32,8 +32,9 @@ A **FastAPI-powered** web app that compares text differences between two columns
 ## 🚀 Installation & Setup  
 
 ### **🔧 Prerequisites:** 
+```bash
 Ensure you have Python 3.8+ installed on your system.
-
+```
 ### Steps to Run Locally
 ### **📥 Clone the Repository:**
    ```bash
@@ -60,7 +61,8 @@ Simply open index.html in your browser! 🌍
 ```
 
 ## 🔗 API Endpoints
-* 🟢 Upload File & Preview (POST /preview/)
+
+** 🟢 Upload File & Preview (POST /preview/) **
 * 📂 Request: Upload a .csv / .xlsx / .xls file.
 * 📊 Response: Returns a preview of the first few rows.
 
