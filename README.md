@@ -8,23 +8,23 @@ A **FastAPI-powered** web app that compares text differences between two columns
 ✅ Select any two columns to compare.  
 ✅ Get a downloadable **Excel file** 📂 with color-coded differences.  
 ---
-## 🛠 How It Works
-🔹 Upload your file 📂
-* 🔹 Select two columns for comparison 📊
-* 🔹 Click "Compare & Download" 🚀
-* 🔹 Download Excel file with differences marked! ✅
-  
-### 📌 Text Highlighting:
-* ❌ Deleted text → 🟥 Red (Strike-through)
-* ✅ Added text → 🟩 Green
-* 🔽 Screenshots:
----
 
 ## 🌟 Live Demo (GIF)  
 
 ![Demo](https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif)  
 *(Replace with your actual demo GIF/video)*  
+---
 
+## 🛠 How It Works
+🔹 Upload your file 📂
+🔹 Select two columns for comparison 📊
+🔹 Click "Compare & Download" 🚀
+🔹 Download Excel file with differences marked! ✅
+
+### 📌 Text Highlighting:
+* ❌ Deleted text → 🟥 Red (Strike-through)
+* ✅ Added text → 🟩 Green
+* 🔽 Screenshots:
 ---
 
 ## 🛠 Technologies Used  
