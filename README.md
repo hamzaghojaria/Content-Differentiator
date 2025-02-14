@@ -1,5 +1,4 @@
 # Content-Differentiator
-# Text Difference Checker
 
 ## Overview
 This project is a web-based application that allows users to upload spreadsheet files (CSV, XLSX, XLS) and compare the differences between two selected text columns. The application highlights differences in sentences using color-coded text and allows users to download the processed results.
