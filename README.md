@@ -42,22 +42,24 @@ Ensure you have Python 3.8+ installed on your system.
    git clone https://github.com/your-username/your-repository.git
    cd your-repository
    ```
-   Create a virtual environment and activate it:
+### **💻 Create a virtual environment and activate it: **
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
    
-📦 Install Dependencies:
+### ** 📦 Install Dependencies: **
    ```bash
    pip install -r requirements.txt
    ```
-▶ Run the Application:
+### ** ▶ Run the Application: **
    ```bash
    uvicorn main:app --reload
    ```
-🌐 Open Frontend:
+### ** 🌐 Open Frontend: **
+```bash
 Simply open index.html in your browser! 🌍
+```
 
 🔗 API Endpoints
 🟢 Upload File & Preview (POST /preview/)
