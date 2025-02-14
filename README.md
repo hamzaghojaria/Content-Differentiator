@@ -42,7 +42,7 @@ Ensure you have Python 3.8+ installed on your system.
    git clone https://github.com/your-username/your-repository.git
    cd your-repository
    ```
-### **💻 Create a virtual environment and activate it: **
+### 💻 Create a virtual environment and activate it: 
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
