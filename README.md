@@ -7,6 +7,10 @@ A **FastAPI-powered** web app that compares text differences between two columns
 ✅ Preview the uploaded file before processing.  
 ✅ Select any two columns to compare.  
 ✅ Get a downloadable **Excel file** 📂 with color-coded differences.  
+✅ **Beautiful UI** 🎨 with Bootstrap & smooth animations.  
+✅ 🚀 **FastAPI** backend with **async processing** for speed.  
+✅ **Loading animations** & **progress bar** for better UX.  
+
 ---
 
 ## 🛠 How It Works
