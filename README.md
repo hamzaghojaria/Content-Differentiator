@@ -9,13 +9,8 @@ A **FastAPI-powered** web app that compares text differences between two columns
 ✅ Get a downloadable **Excel file** 📂 with color-coded differences.  
 ---
 
-## 🌟 Live Demo (GIF)  
-![Demo](https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif)  
-*(Replace with your actual demo GIF/video)*  
----
-
 ## 🛠 How It Works
-* 🔹 Upload your file 📂
+🔹 Upload your file 📂
 * 🔹 Select two columns for comparison 📊
 * 🔹 Click "Compare & Download" 🚀
 * 🔹 Download the Excel file with differences marked! ✅
