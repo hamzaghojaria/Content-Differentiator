@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Difference Checker</title>
+
+    <!-- Bootstrap for better UI -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary, .btn-success {
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-primary:hover, .btn-success:hover {
+            transform: scale(1.05);
+        }
+        table {
+            margin-top: 20px;
+        }
+        .form-select {
+            width: 100%;
+        }
+
+        /* Full Page Loader */
+        #pageLoader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Progress Bar Loader */
+        #progressBar {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #4caf50, #ff9800, #f44336);
+            background-size: 200% auto;
+            animation: loadingAnimation 1.5s linear infinite;
+            display: none;
+            margin-top: 15px; /* Added space above */
+        }
+
+        @keyframes loadingAnimation {
+            0% { background-position: 0% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Full Page Loader -->
+    <div id="pageLoader">
+        <div class="text-center">
+            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+            <p class="mt-2">Loading...</p>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <h2 class="mb-4">Text Difference Checker</h2>
+
+        <!-- File Upload Section -->
+        <div class="mb-3">
+            <input type="file" id="fileInput" class="form-control" accept=".csv,.xlsx,.xls">
+            <button class="btn btn-primary mt-2" onclick="uploadFile()">Upload & Preview</button>
+        </div>
+
+        <!-- Table Preview -->
+        <h4 class="mt-4">Preview</h4>
+        <table class="table table-bordered table-striped" id="previewTable"></table>
+
+        <!-- Column Selection -->
+        <h4 class="mt-4">Select Columns</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Column 1:</label>
+                <select id="column1" class="form-select"></select>
+            </div>
+            <div class="col-md-6">
+                <label>Column 2:</label>
+                <select id="column2" class="form-select"></select>
+            </div>
+        </div>
+
+        <!-- Process Button & Loader -->
+        <button class="btn btn-success mt-3" onclick="processFile()">Compare & Download</button>
+
+        <!-- Progress Bar Loader -->
+        <div id="progressBar"></div>
+
+        <!-- Download Section -->
+        <div id="downloadSection" style="display: none;">
+            <h4 class="mt-4">Download Processed File</h4>
+            <a id="downloadLink" class="btn btn-warning" href="#" download="final_output.xlsx">Download Excel File</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let uploadedFile = null;
+        let previewData = [];
+
+        // Hide full-page loader when page is fully loaded
+        window.onload = function () {
+            document.getElementById("pageLoader").style.display = "none";
+        };
+
+        async function uploadFile() {
+            const fileInput = document.getElementById("fileInput").files[0];
+            if (!fileInput) {
+                alert("Please select a file!");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", fileInput);
+
+            try {
+                const response = await fetch("http://127.0.0.1:8000/preview/", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const result = await response.json();
+                if (response.ok && result.preview) {
+                    uploadedFile = fileInput;
+                    previewData = result.preview;
+                    populateTable(result.preview);
+                    populateDropdowns(result.preview);
+                } else {
+                    alert("Error: " + (result.detail || "Failed to process file."));
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Failed to upload file.");
+            }
+        }
+
+        function populateTable(data) {
+            const table = document.getElementById("previewTable");
+            table.innerHTML = "";
+            
+            if (data.length === 0) {
+                table.innerHTML = "<tr><td>No data available</td></tr>";
+                return;
+            }
+
+            const headers = Object.keys(data[0]);
+            let thead = "<thead><tr>" + headers.map(h => `<th>${h}</th>`).join('') + "</tr></thead>";
+            let tbody = "<tbody>" + data.map(row => 
+                "<tr>" + headers.map(h => `<td>${row[h] || ""}</td>`).join('') + "</tr>"
+            ).join('') + "</tbody>";
+
+            table.innerHTML = thead + tbody;
+        }
+
+        function populateDropdowns(data) {
+            if (data.length === 0) return;
+
+            const columns = Object.keys(data[0]);
+            const column1Select = document.getElementById("column1");
+            const column2Select = document.getElementById("column2");
+
+            column1Select.innerHTML = columns.map(col => `<option value="${col}">${col}</option>`).join('');
+            column2Select.innerHTML = columns.map(col => `<option value="${col}">${col}</option>`).join('');
+        }
+
+        async function processFile() {
+            if (!uploadedFile) {
+                alert("Please upload a file first!");
+                return;
+            }
+
+            const column1 = document.getElementById("column1").value;
+            const column2 = document.getElementById("column2").value;
+
+            if (!column1 || !column2 || column1 === column2) {
+                alert("Please select two different columns!");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("file", uploadedFile);
+            formData.append("column1", column1);
+            formData.append("column2", column2);
+
+            console.log("Sending FormData:", [...formData.entries()]);
+
+            // Hide the download button when starting a new process
+            document.getElementById("downloadSection").style.display = "none";
+
+            // Show progress bar loader
+            document.getElementById("progressBar").style.display = "block";
+
+            try {
+                const response = await fetch("http://127.0.0.1:8000/content-difference/", {
+                    method: "POST",
+                    body: formData
+                });
+
+                // Hide progress bar loader
+                document.getElementById("progressBar").style.display = "none";
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Server Error: ${errorText}`);
+                }
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+
+                document.getElementById("downloadLink").href = url;
+                document.getElementById("downloadSection").style.display = "block";
+
+            } catch (error) {
+                document.getElementById("progressBar").style.display = "none";
+                console.error("Error:", error);
+                alert("Failed to process file: " + error.message);
+            }
+        }
+    </script>
+
+</body>
+</html>
