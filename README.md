@@ -11,7 +11,7 @@ A **FastAPI-powered** web app that compares text differences between two columns
 
 ## 🛠 How It Works
 🔹 Upload your file 📂
-* 🔹 Select two columns for comparison 📊
+🔹 Select two columns for comparison 📊
 * 🔹 Click "Compare & Download" 🚀
 * 🔹 Download the Excel file with differences marked! ✅
 
