@@ -48,15 +48,15 @@ Ensure you have Python 3.8+ installed on your system.
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
    
-### ** 📦 Install Dependencies: **
+### 📦 Install Dependencies:    
    ```bash
    pip install -r requirements.txt
    ```
-### ** ▶ Run the Application: **
+### ▶ Run the Application: 
    ```bash
    uvicorn main:app --reload
    ```
-### ** 🌐 Open Frontend: **
+### 🌐 Open Frontend: **
 ```bash
 Simply open index.html in your browser! 🌍
 ```
