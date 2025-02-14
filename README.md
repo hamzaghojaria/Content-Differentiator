@@ -1,7 +1,7 @@
 # Content-Differentiator
 
 A **FastAPI-powered** web app that compares text differences between two columns from an uploaded file. It **highlights** removed text in **🟥 red (strike-through)** and added text in **🟩 green** to make changes easily visible! 📊  
-
+---
 ##🔥 Features:  
 ✅ Upload `.csv`, `.xlsx`, or `.xls` files.  
 ✅ Preview the uploaded file before processing.  
