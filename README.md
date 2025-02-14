@@ -7,8 +7,17 @@ A **FastAPI-powered** web app that compares text differences between two columns
 ✅ Preview the uploaded file before processing.  
 ✅ Select any two columns to compare.  
 ✅ Get a downloadable **Excel file** 📂 with color-coded differences.  
-✅ **Beautiful UI** 🎨 with Bootstrap & smooth animations.  
-
+---
+## 🛠 How It Works
+* 🔹 Upload your file 📂
+* 🔹 Select two columns for comparison 📊
+* 🔹 Click "Compare & Download" 🚀
+* 🔹 Download Excel file with differences marked! ✅
+  
+### 📌 Text Highlighting:
+* ❌ Deleted text → 🟥 Red (Strike-through)
+* ✅ Added text → 🟩 Green
+* 🔽 Screenshots:
 ---
 
 ## 🌟 Live Demo (GIF)  
@@ -59,16 +68,6 @@ Ensure you have Python 3.8+ installed on your system.
 ```bash
 Simply open index.html in your browser! 🌍
 ```
-
-## 🛠 How It Works
-* 🔹 Upload your file 📂
-* 🔹 Select two columns for comparison 📊
-* 🔹 Click "Compare & Download" 🚀
-* 🔹 Download Excel file with differences marked! ✅
-  
-### 📌 Text Highlighting:
-* ❌ Deleted text → 🟥 Red (Strike-through)
-* ✅ Added text → 🟩 Green
 
 ## Contributing
 Feel free to fork the project, create feature branches, and submit pull requests. Contributions are welcome!
