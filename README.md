@@ -62,9 +62,9 @@ Simply open index.html in your browser! 🌍
 ```
 
 🔗 API Endpoints
-🟢 Upload File & Preview (POST /preview/)
-📂 Request: Upload a .csv / .xlsx / .xls file.
-📊 Response: Returns a preview of the first few rows.
+* 🟢 Upload File & Preview (POST /preview/)
+* 📂 Request: Upload a .csv / .xlsx / .xls file.
+* 📊 Response: Returns a preview of the first few rows.
 
 🟢 Compare Columns & Download (POST /content-difference/)
 📂 Request:
