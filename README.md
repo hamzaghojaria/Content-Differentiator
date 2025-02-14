@@ -73,4 +73,4 @@ Feel free to fork the project, create feature branches, and submit pull requests
 For any issues or suggestions, please create an issue on the GitHub repository or contact the developer.
 
 ---
-Made with ❤️ using FastAPI and Bootstrap.
+Made with ❤️ using FastAPI.
