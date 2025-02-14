@@ -56,29 +56,40 @@ Ensure you have Python 3.8+ installed on your system.
    ```bash
    uvicorn main:app --reload
    ```
-### 🌐 Open Frontend: **
+### 🌐 Open Frontend:
 ```bash
 Simply open index.html in your browser! 🌍
 ```
 
-🔗 API Endpoints
+## 🔗 API Endpoints
 * 🟢 Upload File & Preview (POST /preview/)
 * 📂 Request: Upload a .csv / .xlsx / .xls file.
 * 📊 Response: Returns a preview of the first few rows.
 
 🟢 Compare Columns & Download (POST /content-difference/)
 📂 Request:
-
-   * file → Uploaded file
-column1 → First column to compare
-column2 → Second column to compare
+* file → Uploaded file
+* column1 → First column to compare
+* column2 → Second column to compare
 📊 Response: Returns a downloadable Excel file (final_output.xlsx) with highlighted differences! 🎉
 
-## Usage
-1. Upload a CSV or Excel file.
-2. Select two text-based columns for comparison.
-3. Click "Compare & Download" to process the file.
-4. Download the resulting Excel file with highlighted differences.
+🛠 How It Works
+🔹 Upload your file 📂
+🔹 Select two columns for comparison 📊
+🔹 Click "Compare & Download" 🚀
+🔹 Download Excel file with differences marked! ✅
+
+📌 Text Highlighting:
+
+❌ Deleted text → 🟥 Red (Strike-through)
+✅ Added text → 🟩 Green
+
+🎨 UI Highlights
+✨ Bootstrap-powered UI for smooth interactions!
+⏳ Loading animations & progress bar for better feedback!
+📥 Easy file upload & instant preview!
+
+🔽 Screenshots:
 
 ## Contributing
 Feel free to fork the project, create feature branches, and submit pull requests. Contributions are welcome!
