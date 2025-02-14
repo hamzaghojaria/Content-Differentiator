@@ -9,7 +9,8 @@ A **FastAPI-powered** web app that compares text differences between two columns
 ✅ Get a downloadable **Excel file** 📂 with color-coded differences.  
 
 ---
-
+![Alt Text](https://github.com/hamzaghojaria/Content-Differentiator/issues/1#issue-2854652159)
+---
 ## 🛠 How It Works
 * Upload your file 📂
 * Select two columns for comparison 📊
