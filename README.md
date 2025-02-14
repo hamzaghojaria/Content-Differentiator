@@ -42,15 +42,16 @@ Ensure you have Python 3.8+ installed on your system.
    git clone https://github.com/your-username/your-repository.git
    cd your-repository
    ```
-2. Create a virtual environment and activate it:
+   Create a virtual environment and activate it:
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
    
 📦 Install Dependencies:
    ```bash
    pip install -r requirements.txt
-   
+   ```
 ▶ Run the Application:
    ```bash
    uvicorn main:app --reload
