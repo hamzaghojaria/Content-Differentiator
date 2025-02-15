@@ -2,6 +2,7 @@ from fastapi import UploadFile, HTTPException
 import pandas as pd
 import difflib
 import xlsxwriter
+from difflib import SequenceMatcher
 
 def read_file(file: UploadFile):
     """Function to read CSV, XLSX, and XLS files into a Pandas DataFrame."""
@@ -77,4 +78,5 @@ def color_code_sentences(df, sentence_column, output_file):
             # Call the function with your DataFrame, the column to format, and the output file
         
 
-    
+def similarity_ratio(a, b):
+    return SequenceMatcher(None, str(a), str(b)).ratio()  # Ensure text is string
