@@ -61,6 +61,7 @@ async def differentiator(
             if filtered_df.shape[0] >= 1:
                 print(column1, column2)
                 filtered_df['Similarity Ratio'] = filtered_df.apply(lambda row: differ_proc.similarity_ratio(row[column1], row[column2]), axis=1)
+                filtered_df['Similarity Ratio'] = filtered_df['Similarity Ratio'].round(2)
                 filtered_df['Content_Difference'] = filtered_df.apply(lambda row: differ_proc.color_diff(row[column1], row[column2]), axis=1)
 
                 filtered_df.reset_index(drop=True,inplace=True)
