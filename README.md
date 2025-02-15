@@ -1,12 +1,12 @@
 # Content-Differentiator
 
-A **FastAPI-powered** web app that compares text differences between two columns from an uploaded file. It **highlights** removed text in **🟥 red (strike-through)** and added text in **🟩 green** to make changes easily visible! 📊  
+A **FastAPI-powered** web app that compares text differences between two columns from an uploaded file. It **highlights** removed text in **🟥 red (strike-through)** and added text in **🟩 green** to make changes easily visible and also similarity ratio! 📊  
 
 ## 🔥 Features:
 ✅ Upload `.csv`, `.xlsx`, or `.xls` files.  
 ✅ Preview the uploaded file before processing.  
 ✅ Select any two columns to compare.  
-✅ Get a downloadable **Excel file** 📂 with color-coded differences.  
+✅ Get a downloadable **Excel file** 📂 with similarity ratio and color-coded differences.  
 
 ---
 ![Alt Text](https://github.com/user-attachments/assets/2561ac5f-1e21-4268-93e5-068cb63e2189)
@@ -15,7 +15,7 @@ A **FastAPI-powered** web app that compares text differences between two columns
 * Upload your file 📂
 * Select two columns for comparison 📊
 * Click "Compare & Download" 🚀
-* Download the Excel file with differences marked! ✅
+* Download the Excel file with the similarity ratio and differences marked! ✅
 
 ### 📌 Text Highlighting:
 * ❌ Deleted text → 🟥 Red (Strike-through)
