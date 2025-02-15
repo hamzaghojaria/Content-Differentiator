@@ -14,7 +14,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             background: white;
             padding: 20px;
             border-radius: 10px;
@@ -26,8 +26,13 @@
         .btn-primary:hover, .btn-success:hover {
             transform: scale(1.05);
         }
+        .table-responsive {
+            max-height: 500px;
+            overflow-x: auto;
+        }
         table {
             margin-top: 20px;
+            white-space: nowrap;
         }
         .form-select {
             width: 100%;
@@ -53,7 +58,7 @@
             background-size: 200% auto;
             animation: loadingAnimation 1.5s linear infinite;
             display: none;
-            margin-top: 15px; /* Added space above */
+            margin-top: 15px;
         }
 
         @keyframes loadingAnimation {
@@ -83,7 +88,9 @@
 
         <!-- Table Preview -->
         <h4 class="mt-4">Preview</h4>
-        <table class="table table-bordered table-striped" id="previewTable"></table>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped" id="previewTable"></table>
+        </div>
 
         <!-- Column Selection -->
         <h4 class="mt-4">Select Columns</h4>
