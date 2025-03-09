@@ -37,12 +37,12 @@ async def differentiator(
         
         df = differ_proc.read_file(file)
 
-        if df.shape[0] < 1: #checking that the dataframe should contain rows
-            return {"Error":"File contains 0 rows." }
+        if df.shape[0] < 1: #checking that the data frame should contain rows
+            return {"Error": "File contains 0 rows." }
 
         if df.shape[0] >= 1:
             if column1 == column2:
-                return {"Error":"Both the columns names are same." }
+                return {"Error": "Both the names of the columns are the same." }
 
             selected_columns_list = [column1,column2] # Convert string to list
 
@@ -53,7 +53,10 @@ async def differentiator(
                 return {"Error":f"Invalid columns: {missing_columns}. Available columns: {df.columns.tolist()}"}
 
             filtered_df = df[selected_columns_list]
+            filtered_df.fillna("NA", inplace=True)
             filtered_df.reset_index(drop=True,inplace=True)
+            
+
         
             if filtered_df.shape[0] < 1:
                 return {"Error":"Filtered file contains 0 rows." }
