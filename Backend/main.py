@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi import UploadFile, File
-from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse,HTMLResponse
 import pandas as pd
 import uvicorn
 from Backend import functions as differ_proc
@@ -19,6 +20,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve static files from the "Frontend" directory
+app.mount("/static", StaticFiles(directory="Frontend"), name="static")
+
+@app.get("/", response_class=HTMLResponse)
+async def serve_frontend():
+    with open("Frontend/index.html", "r", encoding="utf-8") as f:
+        return f.read()
+
 
 
 @app.post("/preview/")
