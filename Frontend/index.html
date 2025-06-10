@@ -141,7 +141,7 @@
             formData.append("file", fileInput);
 
             try {
-                const response = await fetch("http://127.0.0.1:8000/preview/", {
+                const response = await fetch("/preview/", {
                     method: "POST",
                     body: formData
                 });
@@ -218,7 +218,7 @@
             document.getElementById("progressBar").style.display = "block";
 
             try {
-                const response = await fetch("http://127.0.0.1:8000/content-difference/", {
+                const response = await fetch("/content-difference/", {
                     method: "POST",
                     body: formData
                 });
