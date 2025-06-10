@@ -10,7 +10,7 @@ import os
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Form
 
-app = FastAPI()
+app = FastAPI(
 
 # Enable CORS for all domains (for testing)
 app.add_middleware(
