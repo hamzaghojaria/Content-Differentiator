@@ -7,6 +7,7 @@
 
     <!-- Bootstrap for better UI -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
         body {
@@ -65,6 +66,27 @@
             0% { background-position: 0% 0; }
             100% { background-position: 200% 0; }
         }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+        .accordion-body li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        .accordion-body i {
+            font-size: 1.1rem;
+            vertical-align: middle;
+        }
+
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +100,54 @@
     </div>
 
     <div class="container text-center">
-        <h2 class="mb-4">Content-Differentiator</h2>
+    <h2 class="mb-4 d-flex justify-content-center align-items-center">
+    <i class="bi bi-stars text-warning me-2" style="font-size: 1.8rem;"></i>
+    Content-Differentiator
+    </h2>
+
+    
+    <div class="text-muted mb-4 px-3 py-3 rounded" style="background-color: #feffe9; font-size: 1.05rem; border-left: 5px solid #fdc50d;">
+    <p class="mb-2">
+        <i class="bi bi-lightbulb-fill text-warning me-2"></i>
+        <strong>What does this tool do?</strong><br>
+        Effortlessly compare two columns from your uploaded CSV or Excel file — the tool highlights row-by-row differences and lets you download a clean, structured Excel output.
+    </p>
+    
+    <div class="mt-3">
+        <i class="bi bi-file-earmark-excel-fill me-2 text-warning"></i>
+        New here? <strong>Try it out</strong> with a ready-made file:
+        <a href="static/sample_input.xlsx" download class="btn btn-sm btn-outline-primary ms-2">
+            <i class="bi bi-download me-1"></i>Download Sample Excel
+        </a>
+    </div>
+    </div>
+
+    <!-- Modern Guide Section (Accordion Style) with Icons -->
+    <div class="accordion mb-4" id="guideAccordion">
+    <div class="accordion-item" style="border: 1px solid #dee2e6; border-radius: 8px;">
+        <h2 class="accordion-header" id="headingGuide">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGuide" aria-expanded="false" aria-controls="collapseGuide" style="background-color: #f1f3f5; color: #0d6efd; font-weight: 600;">
+            <i class="bi bi-lightbulb-fill text-primary me-2"></i> How to Use This Tool
+        </button>
+        </h2>
+        <div id="collapseGuide" class="accordion-collapse collapse" aria-labelledby="headingGuide" data-bs-parent="#guideAccordion">
+        <div class="accordion-body text-start">
+            <ol class="mb-0 ps-3">
+            <li><i class="bi bi-upload me-2 text-secondary"></i> <strong>Upload & Preview</strong> your CSV or Excel file by clicking the upload button.</li>
+            <li><i class="bi bi-eye-fill me-2 text-success"></i> Check the <strong>preview table</strong> to ensure your data is displayed correctly.</li>
+            <li><i class="bi bi-columns-gap me-2 text-warning"></i> Select <strong>two columns</strong> from the dropdowns to compare.</li>
+            <li><i class="bi bi-download me-2 text-danger"></i>Click <strong>Compare & Download</strong> to process and download the result as an Excel file.
+            <li><i class="bi bi-file-earmark-excel-fill text-success me-1"></i>The file will highlight the differences between the selected columns row-wise.</span></li>
+            <li><i class="bi bi-file-earmark-excel-fill me-2 text-warning"></i>New here? Try our 
+            <a href="static/sample_input.xlsx" download class="link-primary fw-semibold">sample file</a> to test the tool.
+
+
+            </ol>
+        </div>
+        </div>
+    </div>
+    </div>
+
 
         <!-- File Upload Section -->
         <div class="mb-3">
@@ -118,10 +187,19 @@
         </div>
     </div>
 
+    <!-- Footer with Footnote -->
+    <footer>
+        <p>&copy; 2025 Content-Differentiator. All rights reserved.</p>
+        ❤️ Bringing Ideas To Life –  
+        <a href="https://www.linkedin.com/in/saad-ghojaria/" class="footer-link text-primary" target="_blank" rel="noopener noreferrer">Saad Ghojaria</a> &  
+        <a href="https://www.linkedin.com/in/hamzaghojaria/" class="footer-link text-primary" target="_blank" rel="noopener noreferrer">Hamza Ghojaria</a>
+    </footer>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        
         let uploadedFile = null;
         let previewData = [];
 
