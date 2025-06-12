@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,87 +9,12 @@
     <!-- Bootstrap for better UI -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1000px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .btn-primary, .btn-success {
-            transition: all 0.3s ease-in-out;
-        }
-        .btn-primary:hover, .btn-success:hover {
-            transform: scale(1.05);
-        }
-        .table-responsive {
-            max-height: 500px;
-            overflow-x: auto;
-        }
-        table {
-            margin-top: 20px;
-            white-space: nowrap;
-        }
-        .form-select {
-            width: 100%;
-        }
-
-        /* Full Page Loader */
-        #pageLoader {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        /* Progress Bar Loader */
-        #progressBar {
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, #4caf50, #ff9800, #f44336);
-            background-size: 200% auto;
-            animation: loadingAnimation 1.5s linear infinite;
-            display: none;
-            margin-top: 15px;
-        }
-
-        @keyframes loadingAnimation {
-            0% { background-position: 0% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-        }
-        .accordion-body li {
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-        .accordion-body i {
-            font-size: 1.1rem;
-            vertical-align: middle;
-        }
-
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-    </style>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="static/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
+
 <body>
 
     <!-- Full Page Loader -->
@@ -100,59 +26,58 @@
     </div>
 
     <div class="container text-center">
-    <h2 class="mb-4 d-flex justify-content-center align-items-center">
-    <i class="bi bi-stars text-warning me-2" style="font-size: 1.8rem;"></i>
-    Content-Differentiator
-    </h2>
-
-    
-    <div class="text-muted mb-4 px-3 py-3 rounded" style="background-color: #feffe9; font-size: 1.05rem; border-left: 5px solid #fdc50d;">
-    <p class="mb-2">
-        <i class="bi bi-lightbulb-fill text-warning me-2"></i>
-        <strong>What does this tool do?</strong><br>
-        Effortlessly compare two columns from your uploaded CSV or Excel file — the tool highlights row-by-row differences and lets you download a clean, structured Excel output.
-    </p>
-    
-    <div class="mt-3">
-        <i class="bi bi-file-earmark-excel-fill me-2 text-warning"></i>
-        New here? <strong>Try it out</strong> with a ready-made file:
-        <a href="static/sample_input.xls" download class="btn btn-sm btn-outline-primary ms-2">
-            <i class="bi bi-download me-1"></i>Download Sample Excel
-        </a>
-    </div>
-    </div>
-
-    <!-- Modern Guide Section (Accordion Style) with Icons -->
-    <div class="accordion mb-4" id="guideAccordion">
-    <div class="accordion-item" style="border: 1px solid #dee2e6; border-radius: 8px;">
-        <h2 class="accordion-header" id="headingGuide">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGuide" aria-expanded="false" aria-controls="collapseGuide" style="background-color: #f1f3f5; color: #0d6efd; font-weight: 600;">
-            <i class="bi bi-lightbulb-fill text-primary me-2"></i> How to Use This Tool
-        </button>
+        <h2 class="mb-4 d-flex justify-content-center align-items-center">
+            <i class="bi bi-stars text-warning me-2" style="font-size: 1.8rem;"></i>
+            Content-Differentiator
         </h2>
-        <div id="collapseGuide" class="accordion-collapse collapse" aria-labelledby="headingGuide" data-bs-parent="#guideAccordion">
-        <div class="accordion-body text-start">
-            <ol class="mb-0 ps-3">
-            <li><i class="bi bi-upload me-2 text-secondary"></i> <strong>Upload & Preview</strong> your CSV or Excel file by clicking the upload button.</li>
-            <li><i class="bi bi-eye-fill me-2 text-success"></i> Check the <strong>preview table</strong> to ensure your data is displayed correctly.</li>
-            <li><i class="bi bi-columns-gap me-2 text-warning"></i> Select <strong>two columns</strong> from the dropdowns to compare.</li>
-            <li><i class="bi bi-download me-2 text-danger"></i>Click <strong>Compare & Download</strong> to process and download the result as an Excel file.
-            <li><i class="bi bi-file-earmark-excel-fill text-success me-1"></i>The file will highlight the differences between the selected columns row-wise.</span></li>
-            <li><i class="bi bi-file-earmark-excel-fill me-2 text-warning"></i>New here? Try our 
-            <a href="static/sample_input.xls" download class="link-primary fw-semibold">sample file</a> to test the tool.
 
 
-            </ol>
+        <div class="text-muted mb-4 px-3 py-3 rounded" style="background-color: #feffe9; font-size: 1.05rem; border-left: 5px solid #fdc50d;">
+            <p class="mb-2">
+                <i class="bi bi-lightbulb-fill text-warning me-2"></i>
+                <strong>What does this tool do?</strong><br>
+                Effortlessly compare two columns from your uploaded CSV or Excel file — the tool highlights row-by-row differences and lets you download a clean, structured Excel output.
+            </p>
+
+            <div class="mt-3">
+                <i class="bi bi-file-earmark-excel-fill me-2 text-warning"></i>
+                New here? <strong>Try it out</strong> with a ready-made file:
+                <a href="static/sample_input.xls" download="" class="btn btn-sm btn-outline-primary ms-2">
+                    <i class="bi bi-download me-1"></i>Download Sample Excel
+                </a>
+            </div>
         </div>
-        </div>
-    </div>
-    </div>
 
+        <!-- Modern Guide Section (Accordion Style) with Icons -->
+        <div class="accordion mb-4" id="guideAccordion">
+            <div class="accordion-item" style="border: 1px solid #dee2e6; border-radius: 8px;">
+                <h2 class="accordion-header" id="headingGuide">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGuide" aria-expanded="false" aria-controls="collapseGuide" style="background-color: #f1f3f5; color: #0d6efd; font-weight: 600;">
+                        <i class="bi bi-lightbulb-fill text-primary me-2"></i> How to Use This Tool
+                    </button>
+                </h2>
+                <div id="collapseGuide" class="accordion-collapse collapse" aria-labelledby="headingGuide" data-bs-parent="#guideAccordion">
+                    <div class="accordion-body text-start">
+                        <ol class="mb-0 ps-3">
+                            <li><i class="bi bi-upload me-2 text-secondary"></i> <strong>Upload &amp; Preview</strong> your CSV or Excel file by clicking the upload button.</li>
+                            <li><i class="bi bi-eye-fill me-2 text-success"></i> Check the <strong>preview table</strong> to ensure your data is displayed correctly.</li>
+                            <li><i class="bi bi-columns-gap me-2 text-warning"></i> Select <strong>two columns</strong> from the dropdowns to compare.</li>
+                            <li><i class="bi bi-download me-2 text-danger"></i>Click <strong>Compare &amp; Download</strong> to process and download the result as an Excel file.
+                            </li>
+                            <li><i class="bi bi-file-earmark-excel-fill text-success me-1"></i>The file will highlight the differences between the selected columns row-wise.</li>
+                            <li><i class="bi bi-file-earmark-excel-fill me-2 text-warning"></i>New here? Try our
+                                <a href="static/sample_input.xls" download="" class="link-primary fw-semibold">sample file</a> to test the tool
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- File Upload Section -->
         <div class="mb-3">
             <input type="file" id="fileInput" class="form-control" accept=".csv,.xlsx,.xls">
-            <button class="btn btn-primary mt-2" onclick="uploadFile()">Upload & Preview</button>
+            <button class="btn btn-primary mt-2" onclick="uploadFile()">Upload &amp; Preview</button>
         </div>
 
         <!-- Table Preview -->
@@ -175,7 +100,7 @@
         </div>
 
         <!-- Process Button & Loader -->
-        <button class="btn btn-success mt-3" onclick="processFile()">Compare & Download</button>
+        <button class="btn btn-success mt-3" onclick="processFile()">Compare &amp; Download</button>
 
         <!-- Progress Bar Loader -->
         <div id="progressBar"></div>
@@ -189,139 +114,15 @@
 
     <!-- Footer with Footnote -->
     <footer>
-        <p>&copy; 2025 Content-Differentiator. All rights reserved.</p>
-        ❤️ Bringing Ideas To Life –  
-        <a href="https://www.linkedin.com/in/saad-ghojaria/" class="footer-link text-primary" target="_blank" rel="noopener noreferrer">Saad Ghojaria</a> &  
+        <p>© 2025 Content-Differentiator. All rights reserved.</p>
+        ❤️ Bringing Ideas To Life –
+        <a href="https://www.linkedin.com/in/saad-ghojaria/" class="footer-link text-primary" target="_blank" rel="noopener noreferrer">Saad Ghojaria</a> &amp;
         <a href="https://www.linkedin.com/in/hamzaghojaria/" class="footer-link text-primary" target="_blank" rel="noopener noreferrer">Hamza Ghojaria</a>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        
-        let uploadedFile = null;
-        let previewData = [];
 
-        // Hide full-page loader when page is fully loaded
-        window.onload = function () {
-            document.getElementById("pageLoader").style.display = "none";
-        };
-
-        async function uploadFile() {
-            const fileInput = document.getElementById("fileInput").files[0];
-            if (!fileInput) {
-                alert("Please select a file!");
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append("file", fileInput);
-
-            try {
-                const response = await fetch("/preview/", {
-                    method: "POST",
-                    body: formData
-                });
-
-                const result = await response.json();
-                if (response.ok && result.preview) {
-                    uploadedFile = fileInput;
-                    previewData = result.preview;
-                    populateTable(result.preview);
-                    populateDropdowns(result.preview);
-                } else {
-                    alert("Error: " + (result.detail || "Failed to process file."));
-                }
-            } catch (error) {
-                console.error("Error:", error);
-                alert("Failed to upload file.");
-            }
-        }
-
-        function populateTable(data) {
-            const table = document.getElementById("previewTable");
-            table.innerHTML = "";
-            
-            if (data.length === 0) {
-                table.innerHTML = "<tr><td>No data available</td></tr>";
-                return;
-            }
-
-            const headers = Object.keys(data[0]);
-            let thead = "<thead><tr>" + headers.map(h => `<th>${h}</th>`).join('') + "</tr></thead>";
-            let tbody = "<tbody>" + data.map(row => 
-                "<tr>" + headers.map(h => `<td>${row[h] || ""}</td>`).join('') + "</tr>"
-            ).join('') + "</tbody>";
-
-            table.innerHTML = thead + tbody;
-        }
-
-        function populateDropdowns(data) {
-            if (data.length === 0) return;
-
-            const columns = Object.keys(data[0]);
-            const column1Select = document.getElementById("column1");
-            const column2Select = document.getElementById("column2");
-
-            column1Select.innerHTML = columns.map(col => `<option value="${col}">${col}</option>`).join('');
-            column2Select.innerHTML = columns.map(col => `<option value="${col}">${col}</option>`).join('');
-        }
-
-        async function processFile() {
-            if (!uploadedFile) {
-                alert("Please upload a file first!");
-                return;
-            }
-
-            const column1 = document.getElementById("column1").value;
-            const column2 = document.getElementById("column2").value;
-
-            if (!column1 || !column2 || column1 === column2) {
-                alert("Please select two different columns!");
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append("file", uploadedFile);
-            formData.append("column1", column1);
-            formData.append("column2", column2);
-
-            console.log("Sending FormData:", [...formData.entries()]);
-
-            // Hide the download button when starting a new process
-            document.getElementById("downloadSection").style.display = "none";
-
-            // Show progress bar loader
-            document.getElementById("progressBar").style.display = "block";
-
-            try {
-                const response = await fetch("/content-difference/", {
-                    method: "POST",
-                    body: formData
-                });
-
-                // Hide progress bar loader
-                document.getElementById("progressBar").style.display = "none";
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`Server Error: ${errorText}`);
-                }
-
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-
-                document.getElementById("downloadLink").href = url;
-                document.getElementById("downloadSection").style.display = "block";
-
-            } catch (error) {
-                document.getElementById("progressBar").style.display = "none";
-                console.error("Error:", error);
-                alert("Failed to process file: " + error.message);
-            }
-        }
-    </script>
 
 </body>
+
 </html>
