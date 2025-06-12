@@ -28,14 +28,14 @@
     <div class="container text-center">
         <h2 class="mb-4 d-flex justify-content-center align-items-center">
             <i class="bi bi-stars text-warning me-2" style="font-size: 1.8rem;"></i>
-            Content-Differentiator
+            <b><u>Content-Differentiator</u></b>
         </h2>
 
 
         <div class="text-muted mb-4 px-3 py-3 rounded" style="background-color: #feffe9; font-size: 1.05rem; border-left: 5px solid #fdc50d;">
             <p class="mb-2">
                 <i class="bi bi-lightbulb-fill text-warning me-2"></i>
-                <strong>What does this tool do?</strong><br>
+                <strong><u>What does this tool do?</u></strong><br>
                 Effortlessly compare two columns from your uploaded CSV or Excel file — the tool highlights row-by-row differences and lets you download a clean, structured Excel output.
             </p>
 
@@ -43,7 +43,7 @@
                 <i class="bi bi-file-earmark-excel-fill me-2 text-warning"></i>
                 New here? <strong>Try it out</strong> with a ready-made file:
                 <a href="static/sample_input.xls" download="" class="btn btn-sm btn-outline-primary ms-2">
-                    <i class="bi bi-download me-1"></i>Download Sample Excel
+                    <i class="bi bi-download me-1"></i><u>Download Sample Excel</u>
                 </a>
             </div>
         </div>
@@ -53,7 +53,7 @@
             <div class="accordion-item" style="border: 1px solid #dee2e6; border-radius: 8px;">
                 <h2 class="accordion-header" id="headingGuide">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGuide" aria-expanded="false" aria-controls="collapseGuide" style="background-color: #f1f3f5; color: #0d6efd; font-weight: 600;">
-                        <i class="bi bi-lightbulb-fill text-primary me-2"></i> How to Use This Tool
+                        <i class="bi bi-lightbulb-fill text-primary me-2"></i><u> How to Use This Tool</u>
                     </button>
                 </h2>
                 <div id="collapseGuide" class="accordion-collapse collapse" aria-labelledby="headingGuide" data-bs-parent="#guideAccordion">
@@ -77,38 +77,38 @@
         <!-- File Upload Section -->
         <div class="mb-3">
             <input type="file" id="fileInput" class="form-control" accept=".csv,.xlsx,.xls">
-            <button class="btn btn-primary mt-2" onclick="uploadFile()">Upload &amp; Preview</button>
+            <button class="btn btn-primary mt-2" onclick="uploadFile()"><u>Upload &amp; Preview</u></button>
         </div>
 
         <!-- Table Preview -->
-        <h4 class="mt-4">Preview</h4>
+        <h4 class="mt-4"><b><u>Preview</u></b></h4>
         <div class="table-responsive">
             <table class="table table-bordered table-striped" id="previewTable"></table>
         </div>
 
         <!-- Column Selection -->
-        <h4 class="mt-4">Select Columns</h4>
+        <h4 class="mt-4"><b><u>Select Columns</u></b></h4>
         <div class="row">
             <div class="col-md-6">
-                <label>Column 1:</label>
+                <label><b>Column 1:</b></label>
                 <select id="column1" class="form-select"></select>
             </div>
             <div class="col-md-6">
-                <label>Column 2:</label>
+                <label><b>Column 2:</b></label>
                 <select id="column2" class="form-select"></select>
             </div>
         </div>
 
         <!-- Process Button & Loader -->
-        <button class="btn btn-success mt-3" onclick="processFile()">Compare &amp; Download</button>
+        <button class="btn btn-success mt-3" onclick="processFile()"><u>Compare &amp; Download</u></button>
 
         <!-- Progress Bar Loader -->
         <div id="progressBar"></div>
 
         <!-- Download Section -->
         <div id="downloadSection" style="display: none;">
-            <h4 class="mt-4">Download Processed File</h4>
-            <a id="downloadLink" class="btn btn-warning" href="#" download="final_output.xlsx">Download Excel File</a>
+            <h4 class="mt-4"><b><u>Download Processed File</u></b></h4>
+            <a id="downloadLink" class="btn btn-warning" href="#" download="final_output.xlsx"><u>Download Excel File</u></a>
         </div>
     </div>
 
