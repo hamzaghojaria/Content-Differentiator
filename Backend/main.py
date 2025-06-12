@@ -49,12 +49,14 @@ async def differentiator(
         df = differ_proc.read_file(file)
 
         if df.shape[0] < 1: #checking that the data frame should contain rows
-            return {"Error": "File contains 0 rows." }
-
+            return {"Error": "File contains 0 rows." }     
         if df.shape[0] >= 1:
             if column1 == column2:
                 return {"Error": "Both the names of the columns are the same." }
-
+        if df.shape[1] < 2:
+            return {"Error": "File must contain at least two columns." }   
+        # if column1 == column2:
+        #     return {"Error": "Both the names of the columns are the same." }
             selected_columns_list = [column1,column2] # Convert string to list
 
             print(f"Received selected_columns: {selected_columns_list}")  # Debugging
